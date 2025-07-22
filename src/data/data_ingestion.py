@@ -89,9 +89,13 @@ def main():
         final_df = preprocess_data(df)
         train_data, test_data = train_test_split(final_df, test_size=test_size, random_state=42)
         save_data(train_data, test_data, data_path='./data')
+        logger.debug('saved data to raw in data_ingestion.py')        
     except Exception as e:
         logger.error('Failed to complete the data ingestion process: %s', e)
         print(f"Error: {e}")
+
+        logger.debug('exiting main of data_ingestion.py')
+    
 
 if __name__ == '__main__':
     main()

@@ -96,8 +96,11 @@ def normalize_text(df):
 def main():
     try:
         # Fetch the data from data/raw
+        logger.debug('loading data from raw for preprocessing')
         train_data = pd.read_csv('./data/raw/train.csv')
         test_data = pd.read_csv('./data/raw/test.csv')
+        # train_data = pd.read_csv('train.csv')
+        # test_data = pd.read_csv('test.csv')
         logger.debug('data loaded properly')
 
         # Transform the data
